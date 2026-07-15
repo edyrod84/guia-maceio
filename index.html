@@ -194,10 +194,10 @@ footer b{color:#fff}
   <div class="in wrap">
     <span class="kick">🌴 Guía interactiva de viaje</span>
     <h1>Maceió &amp; Maragogi</h1>
-    <p class="sub">El Caribe brasileño para dos · 31 de agosto → 15 de septiembre de 2026 · 16 días / 15 noches desde Montevideo</p>
+    <p class="sub">El Caribe brasileño para dos · 31 de agosto → 13/14 de septiembre de 2026 · 14 días / 13–14 noches desde Montevideo</p>
     <div class="cd" id="cd"></div>
     <div class="route">
-      <span>✈️ Montevideo</span>→<span>🏙️ Ponta Verde · 8 noches</span>→<span>🐠 Maragogi · 4 noches</span>→<span>🥥 Resort Ipioca · 3 noches</span>
+      <span>✈️ Montevideo</span>→<span>🏨 Palm Ponta Verde · base única</span>→<span>🚐 Day trips: Maragogi, Milagres, Gunga, Francês…</span>
     </div>
     <div class="tools">
       <button onclick="exportState()">💾 Exportar mi progreso</button>
@@ -288,7 +288,7 @@ const TABS = [
 const ITIN = [
 {d:1,dt:'Lun 31 ago',loc:'Vuelo + Ponta Verde',img:'sunset',
  m:'Vuelo Montevideo → Maceió (vía São Paulo, ~9–11 h puerta a puerta). Documentos y visa a mano.',
- t:'Llegada, traslado aeropuerto → Ponta Verde (~25 km, 35–45 min en Uber/taxi, R$70–110). Check-in y descanso.',
+ t:'Llegada, traslado aeropuerto → Ponta Verde (~25 km, 35–45 min en Uber/taxi, R$70–110). Check-in en el Palm Ponta Verde y descanso.',
  n:'Primer paseo por la rambla de Ponta Verde hasta el letrero "Maceió". Cena liviana frente al mar (Lopana o similar).',
  tr:'Aeropuerto → hotel: 35–45 min',br:'Documentos, reales en efectivo, cargador, ropa liviana a mano',cost:180,
  tide:''},
@@ -330,57 +330,45 @@ const ITIN = [
  tide:'⚠️ Las piscinas de Milagres solo se visitan con marea baja: el tour fija el horario según la tabla.'},
 {d:8,dt:'Lun 7 sep',loc:'Feriado · día flexible',img:'hero',
  m:'⚠️ Feriado de Independencia de Brasil: playas urbanas llenas. Ir MUY temprano a Ponta Verde o quedarse en la piscina.',
- t:'Plan tranquilo: museo Théo Brandão (cultura popular alagoana) o spa/masajes. Empacar para Maragogi.',
- n:'Cena de despedida de Maceió: mariscos en Imperador dos Camarões.',
+ t:'Plan tranquilo: museo Théo Brandão (cultura popular alagoana) o spa/masajes.',
+ n:'Cena de mariscos en Imperador dos Camarões (reservar: feriado = todo lleno).',
  tr:'Caminando / Uber corto',br:'Paciencia con las multitudes 😊, reserva de cena hecha',cost:150,
  tide:''},
-{d:9,dt:'Mar 8 sep',loc:'Traslado a Maragogi',img:'gales',
- m:'Check-out y traslado a Maragogi (~125 km, 2 h – 2 h 30 en transfer privado R$350–450 o van compartida R$80–120 pp).',
- t:'Check-in en la pousada. Primera tarde en la playa central de Maragogi, caminata por la vila.',
- n:'Cena de frutos del mar en la vila de Maragogi.',
- tr:'Maceió → Maragogi: 2 h – 2 h 30',br:'Snacks y agua para la ruta, documentos, efectivo',cost:200,
+{d:9,dt:'Mar 8 sep',loc:'Day trip · Galés de Maragogi',img:'gales',
+ m:'⭐ LA excursión del viaje, en versión day trip: salida temprano (~6:30) hacia Maragogi (~2 h 15). Tour de día completo desde Maceió R$180–280 pp, o transfer + catamarán a las Galés contratado allá (R$130–200 pp).',
+ t:'Piscinas naturales de Galés con marea baja. Almuerzo en la vila o en barraca de Antunes (camarão no abacaxi 🍍).',
+ n:'Regreso 18–19 h. Cena liviana cerca del hotel: tapioca o pizza.',
+ tr:'2 h 15 por trayecto: día largo pero vale ORO',br:'Snorkel, GoPro, protector reef-safe (obligatorio), zapatos de agua, efectivo',cost:290,
+ tide:'⚠️ El tour se arma según la marea baja del día: confirmá horario de salida la noche anterior.'},
+{d:10,dt:'Mié 9 sep',loc:'Ponta Verde · recuperación',img:'hero',
+ m:'Día sin despertador después del madrugón: playa frente al hotel, piscina, lectura.',
+ t:'Spa/masajes o caminata larga por la rambla hasta Jatiúca. Açaí de media tarde.',
+ n:'Cena regional premiada en Divina Gula (reservar).',
+ tr:'Todo caminando',br:'Nada: día de recargar batería al 100%',cost:110,
+ tide:'Si hay marea baja de mañana, las piscinas frente a Ponta Verde son el plan perfecto post-madrugón.'},
+{d:11,dt:'Jue 10 sep',loc:'Day trip · Carro Quebrado',img:'milagres',
+ m:'Salida a Barra de Santo Antônio (~50 min al norte). Buggy por la arena hasta Praia do Carro Quebrado: falésias de colores, la playa salvaje más fotogénica de Alagoas.',
+ t:'Almuerzo en barraca rústica frente al mar. Parada en Praia de Tabuba o Sonho Verde a la vuelta.',
+ n:'Regreso al atardecer. Cena simple en la zona del hotel.',
+ tr:'50 min + buggy (~R$250–350 el buggy para dos)',br:'Efectivo (no hay señal ni POS), sombrero, mucha agua',cost:220,
  tide:''},
-{d:10,dt:'Mié 9 sep',loc:'Galés de Maragogi',img:'gales',
- m:'⭐ LA excursión del viaje: catamarán/lancha a las piscinas naturales de Galés (R$130–200 pp + equipo snorkel). Solo con marea baja.',
- t:'Almuerzo frente al mar. Tarde de descanso o paseo en bici por la costanera.',
- n:'Atardecer en la playa, cena tranquila.',
- tr:'Salida desde la playa central',br:'Snorkel, GoPro, protector reef-safe (obligatorio), efectivo',cost:240,
- tide:'⚠️ Reservá el horario exacto con la agencia según la marea del día. Llevar zapatos de agua: hay coral.'},
-{d:11,dt:'Jue 10 sep',loc:'Antunes & Xaréu',img:'milagres',
- m:'Buggy o taxi a Praia de Antunes (10 min): la postal más caribeña de Maragogi, arena blanquísima.',
- t:'Almuerzo en barraca de Antunes (camarão no abacaxi 🍍). Tarde en Praia do Xaréu, casi desierta.',
- n:'Regreso a la pousada, noche de descanso.',
- tr:'10–15 min por playa (buggy día ~R$250–350)',br:'Sombrilla o carpa (poca sombra), agua, efectivo',cost:190,
+{d:12,dt:'Vie 11 sep',loc:'Lagoa Mundaú & Jaraguá',img:'sunset',
+ m:'Mañana de playa favorita (¿revancha de las piscinas de Pajuçara en jangada?).',
+ t:'Tarde: paseo en catamarán por la Lagoa Mundaú y sus 9 islas (salida ~15 h, R$80–120 pp). Sururu y cocada a bordo.',
+ n:'Atardecer desde la laguna 🌅 (el mejor del viaje). Cena en el barrio histórico de Jaraguá o de vuelta en Ponta Verde.',
+ tr:'Uber a la laguna: 20–25 min',br:'Cámara, repelente, campera liviana para el viento',cost:180,
  tide:''},
-{d:12,dt:'Vie 11 sep',loc:'Caminho de Moisés & Barra Grande',img:'gales',
- m:'Con marea baja: Caminho de Moisés en Ponta de Mangue (~20 min): un sendero de arena que "abre el mar" entre piscinas. Foto imperdible.',
- t:'Seguir a Barra Grande: almuerzo y tarde de playa con kitesurf para mirar (o probar).',
- n:'Última noche en Maragogi: cena especial en la vila.',
- tr:'Ponta de Mangue 20 min · Barra Grande 25 min',br:'Salir SIN demora al horario de marea baja, dron/cámara, efectivo',cost:220,
- tide:'⚠️ El Caminho de Moisés existe solo ±1 h alrededor de la marea baja. Confirmá horario la noche anterior.'},
-{d:13,dt:'Sáb 12 sep',loc:'Traslado a resort · Ipioca',img:'resort',
- m:'Check-out y traslado Maragogi → Ipioca (~100 km, 1 h 45, transfer R$300–400).',
- t:'Check-in en el resort all-inclusive. Tarde de piscinas, playa privada y drinks incluidos 🍹.',
- n:'Cena buffet del resort, show nocturno.',
- tr:'1 h 45 aprox',br:'Nada: a partir de acá, modo descanso total',cost:60,
+{d:13,dt:'Sáb 12 sep',loc:'Último día pleno',img:'hero',
+ m:'La playa favorita del viaje una vez más, temprano. Foto de pareja estilo "postal Maceió".',
+ t:'Compras finales (Maceió Shopping o feirinha de Pajuçara). Empacar con calma, pesar valijas.',
+ n:'Cena especial de cierre: Wanchako o el restó pendiente de la lista. Dejar propinas.',
+ tr:'Caminando / Uber corto',br:'Balanza del hotel para valijas, recibos de compras (para aduana)',cost:200,
  tide:''},
-{d:14,dt:'Dom 13 sep',loc:'Resort · día completo',img:'resort',
- m:'Desayuno sin apuro. Playa de Ipioca: cocoteros, mar calmo, casi sin gente.',
- t:'Actividades del resort: kayak, stand-up paddle, spa (extra). Siesta en hamaca paraguaya.',
- n:'Cena à la carte (reservar en recepción al llegar). Caminata nocturna por la playa.',
- tr:'0 min 🎉',br:'Traje de baño, libro, protector',cost:40,
- tide:''},
-{d:15,dt:'Lun 14 sep',loc:'Resort · último día pleno',img:'resort',
- m:'Última mañana de playa y piscina. Foto de pareja al estilo "postal Maceió".',
- t:'Compras finales si faltó algo (Parque Shopping queda camino al centro). Empacar con calma, pesar valijas.',
- n:'Cena especial de cierre del viaje. Dejar propinas. Check-out express firmado.',
- tr:'Shopping opcional: 30–35 min',br:'Balanza del hotel para valijas, recibos de compras (para aduana)',cost:100,
- tide:''},
-{d:16,dt:'Mar 15 sep',loc:'Regreso a Montevideo',img:'sunset',
- m:'Desayuno y traslado al aeropuerto (~40 km desde Ipioca, 45–60 min, salir 3 h antes del vuelo).',
- t:'Vuelo Maceió → São Paulo → Montevideo.',
- n:'Llegada a casa con el mejor bronceado del año 🌅.',
- tr:'Resort → aeropuerto: 45–60 min',br:'Documentos, compras en equipaje de mano si son frágiles',cost:120,
+{d:14,dt:'Dom 13 sep',loc:'Regreso (o día extra)',img:'sunset',
+ m:'Si vuelven el 13: desayuno, check-out y traslado al aeropuerto (~25 km, 35–45 min, salir 3 h antes del vuelo).',
+ t:'Si extienden al lunes 14: este día es un bonus completo de playa y piscina, y el regreso repite este mismo plan el lunes.',
+ n:'Vuelo Maceió → São Paulo → Montevideo. Llegada a casa con el mejor bronceado del año 🌅.',
+ tr:'Hotel → aeropuerto: 35–45 min',br:'Documentos, compras frágiles en equipaje de mano',cost:120,
  tide:''}
 ];
 
@@ -505,12 +493,18 @@ const BEACHES = [
 ];
 
 const HOTELS = [
+{nm:'Palm Ponta Verde ✅ RESERVADO',zone:'Ponta Verde',img:'hero',price:'Reservado',usd:'13–14 noches · sin cena',
+ addr:'Ponta Verde, a pasos de la orla (completar datos exactos de la reserva)',bf:true,ai:false,front:false,dist:'A metros de la playa de Ponta Verde',
+ sv:'Desayuno incluido, piscina, restaurante (cena opcional)',
+ pros:'Base única de TODO el viaje: un solo check-in · barrio con la mejor gastronomía de Maceió · todos los day trips salen cómodos desde acá',
+ cons:'La cena incluida (+US$500) no conviene: mejor cenar afuera — ver pestaña Comida · preguntar precio de cena por noche suelta en recepción',
+ who:'✅ NUESTRA RESERVA: las 13–14 noches del viaje, del 31/8 al 13 o 14/9.'},
 {nm:'Hotel Ponta Verde Maceió',zone:'Ponta Verde',img:'hero',price:'R$550–750',usd:'~US$100–140',
  addr:'Av. Álvaro Otacílio 2933, Ponta Verde (verificar)',bf:true,ai:false,front:true,dist:'0 m: cruzando la calle',
  sv:'Piscina en rooftop, gimnasio, restaurante, sala de niños',
  pros:'Ubicación 10/10 frente a la mejor playa urbana · desayuno famoso · vistas al mar',
  cons:'Habitaciones estándar algo pequeñas · muy solicitado (reservar temprano)',
- who:'Parejas que quieren TODO a pie: playa, rambla y restós. Nuestra elección sugerida para las 8 noches.'},
+ who:'Parejas que quieren TODO a pie: playa, rambla y restós. Era la sugerencia original; finalmente reservamos el Palm.'},
 {nm:'Best Western Premier Maceió',zone:'Ponta Verde/Jatiúca',img:'sunset',price:'R$480–650',usd:'~US$90–120',
  addr:'Av. Álvaro Otacílio (orla), límite Ponta Verde–Jatiúca (verificar)',bf:true,ai:false,front:true,dist:'0 m: frente a la orla',
  sv:'Piscina, sauna, gimnasio, restaurante panorámico',
@@ -546,7 +540,7 @@ const HOTELS = [
  sv:'All-inclusive completo: 5 piscinas, bares, shows, deportes náuticos, kids club, spa',
  pros:'El clásico AI de Maceió con playa espectacular · gastronomía variada · mucha actividad',
  cons:'Grande y familiar: si buscás silencio absoluto, mirá horarios de shows · extra por à la carte premium',
- who:'⭐ Ideal para el cierre del viaje (3 noches): descanso total sin sacar la billetera.'},
+ who:'Plan anterior (cierre en resort), descartado al elegir base única. Queda como referencia para un day-use de piscina (~R$250–350 pp con almuerzo).'},
 {nm:'Pratagy Beach Resort (Wyndham)',zone:'Pratagy/Ipioca',img:'resort',price:'R$1.400–2.000 AI',usd:'~US$260–370 (2p)',
  addr:'Rod. AL-101 Norte km 11, Praia de Pratagy (verificar)',bf:true,ai:true,front:true,dist:'0 m: playa propia',
  sv:'All-inclusive opcional, parque acuático, spa, canchas, kids club',
@@ -570,7 +564,7 @@ const HOTELS = [
  sv:'Piscina, desayuno regional, jardín de cocoteros, restaurante',
  pros:'Encanto de pousada con estándar alto · playa tranquila al frente · atención personalizada',
  cons:'Lejos del centro de la vila (buggy/taxi para cenar afuera)',
- who:'⭐ Nuestra sugerencia para las 4 noches de Maragogi: romántica y frente al mar.'},
+ who:'Plan anterior (4 noches en Maragogi), descartado: ahora Maragogi se visita en day trip desde Ponta Verde.'},
 {nm:'Amoaras Resort',zone:'Peroba (Maragogi norte)',img:'milagres',price:'R$500–750',usd:'~US$90–140',
  addr:'Praia de Peroba, Maragogi (verificar)',bf:true,ai:false,front:true,dist:'0 m',
  sv:'Bungalows, piscina grande, restaurante, playa semiprivada',
@@ -587,7 +581,7 @@ const FLIGHTS = {
   {a:'Combinada (GOL/LATAM + tramo local)',ruta:'MVD → GRU/VCP → MCZ',dur:'10–14 h',esc:'1–2 escalas',eq:'Verificar en cada tramo si son tickets separados',price:'US$400–560 (más riesgo)'}
  ],
  dates:[
-  {f:'Salida 31 ago → vuelta 15 sep (plan base)',p:'US$500–620',n:'Fechas elegidas. Temporada media-baja: buen precio.',best:true},
+  {f:'Salida 31 ago → vuelta 13 o 14 sep (plan elegido)',p:'US$500–620',n:'Fechas elegidas. Temporada media-baja: buen precio.',best:true},
   {f:'3 días antes (28 ago → 12 sep)',p:'US$480–600',n:'Similar; el 28–29 ago puede estar algo más caro por fin de mes.'},
   {f:'3 días después (3 sep → 18 sep)',p:'US$470–590',n:'Suele bajar levemente pasado el feriado del 7 de septiembre.'},
   {f:'1 semana antes (24 ago → 8 sep)',p:'US$490–620',n:'Incluye el feriado brasileño del 7/9 dentro del viaje: más gente en playas.'},
@@ -636,7 +630,7 @@ const REST = [
  {nm:'Barracas de Antunes',zone:'Maragogi',lvl:2,meal:'A',type:'Playa pé-na-areia',dish:'⭐ Camarão no abacaxi (camarones en la piña)',price:'R$120–180 pareja'},
  {nm:'Frutos do Mar',zone:'Maragogi vila',lvl:2,meal:'A/C',type:'Mariscos tradicional',dish:'Peixada alagoana',price:'R$130–200 pareja'},
  {nm:'Restós de la vila de Maragogi',zone:'Maragogi',lvl:1,meal:'C',type:'Variado (pizza, tapioca, açaí)',dish:'Tapiocas dulces y saladas, açaí en la playa',price:'R$60–120 pareja'},
- {nm:'Buffet del resort',zone:'Ipioca',lvl:2,meal:'D/A/C',type:'All-inclusive',dish:'Todo incluido: aprovechá los à la carte con reserva',price:'Incluido 🎉'}
+ {nm:'Cena buffet del Palm (por noche suelta)',zone:'Ponta Verde',lvl:2,meal:'C',type:'Buffet del hotel',dish:'Solo las noches que quieran: preguntar precio por noche en recepción',price:'~R$100–130 pp'}
 ];
 
 const SHOP = {
@@ -666,15 +660,13 @@ const SHOP = {
 
 const BUDGET_DEF = [
  {k:'vuelos',l:'✈️ Vuelos MVD–MCZ (2 personas)',v:1100},
- {k:'hotel1',l:'🏨 Hotel Ponta Verde · 8 noches',v:820},
- {k:'hotel2',l:'🏡 Pousada Maragogi · 4 noches',v:400},
- {k:'hotel3',l:'🥥 Resort all-inclusive · 3 noches',v:950},
- {k:'comida',l:'🍤 Comidas (12 días fuera del AI)',v:700},
- {k:'traslados',l:'🚐 Traslados largos (aeropuerto, Maragogi, resort)',v:260},
+ {k:'hotel1',l:'🏨 Palm Ponta Verde · 13–14 noches (sin cena)',v:1350},
+ {k:'comida',l:'🍤 Comidas (cenas en la calle, almuerzos de playa)',v:750},
+ {k:'traslados',l:'🚐 Traslados aeropuerto (ida y vuelta)',v:60},
  {k:'uber',l:'🚕 Uber/taxi urbanos',v:120},
- {k:'excursiones',l:'🤿 Excursiones (Galés, Gunga, Milagres, Francês…)',v:420},
+ {k:'excursiones',l:'🤿 Day trips (Galés, Milagres, Gunga, Francês, Carro Quebrado…)',v:550},
  {k:'visa',l:'🛂 Visa VIVIS (2 tasas consulares)',v:160},
- {k:'seguro',l:'🏥 Seguro de viaje (2 personas, 16 días)',v:90},
+ {k:'seguro',l:'🏥 Seguro de viaje (2 personas, 14 días)',v:85},
  {k:'esim',l:'📱 eSIM datos Brasil (2 líneas)',v:30},
  {k:'compras',l:'🛍️ Compras y souvenirs',v:300},
  {k:'propinas',l:'💵 Propinas (10% usual en restós)',v:70},
@@ -682,22 +674,21 @@ const BUDGET_DEF = [
 ];
 
 const PRESETS = {
- original:{vuelos:1100,hotel1:820,hotel2:400,hotel3:950,comida:700,traslados:260,uber:120,excursiones:420,visa:160,seguro:90,esim:30,compras:300,propinas:70,extra:350},
- medio:{vuelos:1050,hotel1:600,hotel2:350,hotel3:550,comida:580,traslados:200,uber:100,excursiones:360,visa:160,seguro:80,esim:25,compras:200,propinas:60,extra:290},
- ahorro:{vuelos:980,hotel1:440,hotel2:300,hotel3:220,comida:470,traslados:160,uber:80,excursiones:300,visa:160,seguro:70,esim:20,compras:120,propinas:50,extra:240}
+ original:{vuelos:1100,hotel1:1350,comida:750,traslados:60,uber:120,excursiones:550,visa:160,seguro:85,esim:30,compras:300,propinas:70,extra:320},
+ medio:{vuelos:1050,hotel1:1350,comida:600,traslados:60,uber:100,excursiones:450,visa:160,seguro:85,esim:25,compras:200,propinas:60,extra:270},
+ ahorro:{vuelos:980,hotel1:1350,comida:480,traslados:50,uber:80,excursiones:350,visa:160,seguro:85,esim:20,compras:120,propinas:50,extra:230}
 };
 const PRESET_INFO = {
- original:['💎 Presupuesto ALTO (el plan original)','Hotel Ponta Verde frente al mar + Pousada Camurim Grande + 3 noches de resort all-inclusive (Salinas). Cenas en los mejores restós. El viaje soñado sin mirar el precio.'],
- medio:['⚖️ Presupuesto MEDIO','Hotel Brisa Praia (misma orla, menos precio) + pousada estándar + resort más económico (Grand Oca o Pratagy en promo, o solo 2 noches de Salinas). Mitad restós lindos, mitad self-service.'],
- ahorro:['🪙 Presupuesto BAJO','Acqua Suítes o Costamar (a 1 cuadra del mar) + pousada simple + SIN resort: esas 3 noches en hotel económico y un day-use de piscina como capricho. Self-service al peso y excursiones contratadas en destino. Mismas 13 playas, mismas piscinas naturales.']
+ original:['💎 Presupuesto ALTO (plan confirmado)','Palm Ponta Verde las 13–14 noches (¡ya reservado!), cenas en los mejores restós, todos los day trips en tour organizado. El viaje soñado sin mirar el precio.'],
+ medio:['⚖️ Presupuesto MEDIO','Misma base (ya reservada), gasto afinado: mitad restós lindos, mitad self-service; day trips contratados y regateados en destino; compras contenidas.'],
+ ahorro:['🪙 Presupuesto BAJO','Cenas económicas (self-service, tapioca, kioscos), Gunga y Francês por libre en Uber, solo Galés y Milagres en tour. Mismas playas, mínima plata.']
 };
 const SAVE_TIPS = [
- ['🏨 El hotel: −US$380','Dormís igual de cerca de la playa en Acqua Suítes o Costamar (a 100–200 m) que pagando frente al mar. En Maceió TODO pasa en la playa, no en el lobby. Con kitchenette además ahorrás cenas.'],
- ['🥥 El resort: −US$600 a 730','Es el lujo más caro del plan (~US$315/noche). Alternativas: (a) eliminalo y quedate en Ponta Verde con un day-use de resort (~R$250–350 pp con almuerzo), (b) dejá solo 1 noche de resort como broche, (c) buscá promos de Pratagy con media pensión en lugar de AI completo.'],
- ['🍽️ Comidas: −US$230','Desayuno ya incluido en hoteles. Almuerzo en self-service al peso (R$60–80/kg: comés bien por R$35–45 pp). La cena "linda" dejala para 4–5 noches especiales, no todas. El agua de coco (R$8) refresca más que el trago (R$35).'],
- ['✈️ Vuelos: −US$100 a 250','Compralos YA con alertas activas (Google Flights + Skyscanner). Mové el viaje 1 semana (7–22 sep): suele ser lo más barato del año. Cotizá también desde Buenos Aires: a veces Buquebus + vuelo desde AEP ahorra 20–30% (solo si la diferencia supera ~US$150 pp).'],
- ['🚐 Traslados: −US$120','Van compartida a Maragogi (R$80–120 pp) en vez de transfer privado (R$350–450). Dentro de Maceió, Uber es barato: no alquiles auto.'],
- ['🤿 Excursiones: −US$120','Contratalas EN la vila de Maragogi/en la playa, no online desde Uruguay: mismo catamarán, 30–40% menos. Negociá pack (Galés + Antunes + Moisés con el mismo agenciero). Gunga en Uber + día de playa en vez de catamarán.'],
+ ['🌙 La cena del hotel: −US$150 a 250','El paquete de media pensión del Palm (+US$500) sale US$18–19 pp por noche. Cenando en la calle promedian US$12–18 con mucha más variedad — y después de los almuerzos de playa de los day trips, varias noches solo cae una tapioca. Si un día quieren buffet, pregunten el precio por noche suelta en recepción (~R$100–130 pp).'],
+ ['🍽️ Comidas: −US$230','Desayuno ya incluido en el hotel. Almuerzo en self-service al peso (R$60–80/kg: comés bien por R$35–45 pp). La cena "linda" dejala para 4–5 noches especiales, no todas. El agua de coco (R$8) refresca más que el trago (R$35).'],
+ ['✈️ Vuelos: −US$100 a 250','Compralos YA con alertas activas (Google Flights + Skyscanner). Cotizá vuelta 13 vs 14 de sep: a veces un día cambia el precio. También desde Buenos Aires: a veces Buquebus + vuelo desde AEP ahorra 20–30% (solo si la diferencia supera ~US$150 pp).'],
+ ['🤿 Day trips: −US$150','Contratalos EN destino (agencias de la orla o el propio hotel), no online desde Uruguay: mismo catamarán, 30–40% menos. Negociá pack si tomás varios con la misma agencia. Gunga y Francês se hacen en Uber + día de playa, sin tour.'],
+ ['🚕 Traslados: −US$40','Uber al aeropuerto (R$70–110) en vez del transfer del hotel. Dentro de Maceió, Uber es barato: no alquiles auto.'],
  ['🛍️ Compras: lo que vos decidas','Es la partida 100% opcional. Y ya viste en Compras & Tech: Apple NO conviene en Brasil, así que esa tentación queda descartada gratis 😄.'],
  ['📅 El truco maestro','Septiembre ya es temporada baja: los precios caen entre semana. Pedí SIEMPRE descuento por pago en efectivo/PIX ("tem desconto à vista?"): 5–10% casi garantizado en pousadas, restós y agencias.']
 ];
@@ -856,7 +847,7 @@ function tickCd(){
   const now=new Date(), diff=DEPART-now;
   const el=$('cd'); if(!el)return;
   if(diff<=0){
-    const back=new Date('2026-09-15T23:00:00-03:00');
+    const back=new Date('2026-09-14T23:00:00-03:00');
     el.innerHTML = now<back
       ? `<div class="b" style="min-width:auto;padding:14px 26px"><div class="n" style="font-size:22px">🎉 ¡Están en Brasil!</div><div class="l">Aprovechen cada ola</div></div>`
       : `<div class="b" style="min-width:auto;padding:14px 26px"><div class="n" style="font-size:22px">🌅 Viaje completado</div><div class="l">Qué recuerdos…</div></div>`;
@@ -874,13 +865,13 @@ function renderResumen(){
   <h2 class="t">Resumen del viaje</h2>
   <p class="sub">Todo el plan de un vistazo. Marcá, anotá y personalizá: la guía guarda tu progreso.</p>
   <div class="grid2">
-    <div class="stat hl"><div class="v">16 días</div><div class="l">31 ago → 15 sep 2026</div></div>
-    <div class="stat"><div class="v">3 bases</div><div class="l">Ponta Verde · Maragogi · Ipioca</div></div>
+    <div class="stat hl"><div class="v">14 días</div><div class="l">31 ago → 13/14 sep 2026</div></div>
+    <div class="stat"><div class="v">1 base</div><div class="l">Palm Ponta Verde · day trips</div></div>
     <div class="stat"><div class="v">13 playas</div><div class="l">del Caribe brasileño</div></div>
     <div class="stat"><div class="v" id="sum-bud">–</div><div class="l">presupuesto pareja (aprox.)</div></div>
   </div>
   <div class="grid2" style="margin-top:14px">
-    <div class="stat"><div class="v">${doneDays}/16</div><div class="l">días completados</div></div>
+    <div class="stat"><div class="v">${doneDays}/${ITIN.length}</div><div class="l">días completados</div></div>
     <div class="stat"><div class="v" id="fav-count">0</div><div class="l">favoritos marcados</div></div>
     <div class="stat"><div class="v">27–29 °C</div><div class="l">clima típico de septiembre</div></div>
     <div class="stat"><div class="v">26 °C</div><div class="l">temperatura del mar 🤿</div></div>
@@ -888,15 +879,15 @@ function renderResumen(){
 
   <h3 class="s">🗺️ La ruta</h3>
   <div class="grid">
-    <div class="card"><div class="ph"><img data-img="hero" alt="Ponta Verde"><span class="badge-price">Noches 1–8</span></div>
-      <div class="bd"><h4>Fase 1 · Maceió urbana (Ponta Verde)</h4>
-      <p class="kv">Base frente a la mejor playa urbana. Días de playa + excursiones al sur (Francês, Gunga) y a la Rota dos Milagres. Toda la movida gastronómica a pie.</p></div></div>
-    <div class="card"><div class="ph"><img data-img="gales" alt="Maragogi"><span class="badge-price">Noches 9–12</span></div>
-      <div class="bd"><h4>Fase 2 · Maragogi</h4>
-      <p class="kv">El "Caribe brasileño": piscinas naturales Galés, Antunes, Xaréu, Caminho de Moisés. Ritmo de pueblo playero y pousada romántica.</p></div></div>
-    <div class="card"><div class="ph"><img data-img="resort" alt="Resort Ipioca"><span class="badge-price">Noches 13–15</span></div>
-      <div class="bd"><h4>Fase 3 · Resort all-inclusive (Ipioca)</h4>
-      <p class="kv">Cierre en modo avión: piscinas, playa semiprivada, drinks incluidos y cero logística antes de volar a casa.</p></div></div>
+    <div class="card"><div class="ph"><img data-img="hero" alt="Ponta Verde"><span class="badge-price">Base única · 13–14 noches</span></div>
+      <div class="bd"><h4>🏨 Palm Ponta Verde (reservado ✅)</h4>
+      <p class="kv">Un solo check-in en todo el viaje: sin valijas de acá para allá. Frente a la mejor playa urbana, con toda la movida gastronómica a pie. Cenas por la calle (ver pestaña Comida).</p></div></div>
+    <div class="card"><div class="ph"><img data-img="gunga" alt="Day trips al sur"><span class="badge-price">Day trips · sur</span></div>
+      <div class="bd"><h4>🚐 Al sur: Francês, Gunga, Lagoa Mundaú</h4>
+      <p class="kv">Salidas de medio día o día completo: Praia do Francês + Marechal Deodoro, Gunga con sus acantilados, y el catamarán por las 9 islas de la laguna al atardecer.</p></div></div>
+    <div class="card"><div class="ph"><img data-img="gales" alt="Day trips al norte"><span class="badge-price">Day trips · norte</span></div>
+      <div class="bd"><h4>🐠 Al norte: Maragogi, Milagres, Carro Quebrado</h4>
+      <p class="kv">Las joyas: piscinas naturales de Galés (Maragogi) y la Rota dos Milagres en día completo, más las falésias de Carro Quebrado en buggy.</p></div></div>
   </div>
 
   <h3 class="s">${TIDECARD.t}</h3>
@@ -932,9 +923,8 @@ function renderItin(){
   let html=`<h2 class="t">Itinerario día por día</h2>
   <p class="sub">Tocá cada día para expandirlo. Marcá ✔ los días vividos y ⭐ los imperdibles. Los presupuestos diarios son aproximados para la pareja (sin alojamiento).</p>`;
   ITIN.forEach(d=>{
-    if(d.d===1) html+=phase('hero','Fase 1 · Maceió — Ponta Verde','Días 1 a 8 · playa urbana + excursiones');
-    if(d.d===9) html+=phase('gales','Fase 2 · Maragogi','Días 9 a 12 · piscinas naturales y playas vírgenes');
-    if(d.d===13) html+=phase('resort','Fase 3 · Resort all-inclusive — Ipioca','Días 13 a 16 · descanso total y regreso');
+    if(d.d===1) html+=phase('hero','Semana 1 · Ponta Verde y alrededores','Días 1 a 8 · playa urbana, Pajuçara, Francês, Gunga, Milagres');
+    if(d.d===9) html+=phase('gales','Semana 2 · Los day trips grandes y el cierre','Días 9 a 14 · Galés de Maragogi, Carro Quebrado, Lagoa Mundaú — siempre durmiendo en el Palm');
     const id='d'+d.d;
     html+=`<div class="day ${S.done[id]?'done':''}" id="day-${d.d}">
       <div class="hd" onclick="tgDay(${d.d},event)">
@@ -1000,7 +990,7 @@ function renderHotels(){
   $('tab-hoteles').innerHTML=`
   <h2 class="t">Hoteles & resorts</h2>
   <p class="sub">Precios aproximados por noche para 2 personas (sept 2026) — varían según fecha y anticipación: usalos para comparar, no como tarifa final.</p>
-  <div class="warn"><span class="ic">💡</span><div><b>Estrategia sugerida:</b> Hotel Ponta Verde (8 noches) + Pousada Camurim Grande (4 noches) + Salinas Maceió AI (3 noches) ≈ el mejor equilibrio romance/precio/cero estrés. Marcá ⭐ tus candidatos y anotá cotizaciones reales en cada tarjeta.</div></div>
+  <div class="warn"><span class="ic">✅</span><div><b>Decisión tomada:</b> base única en el <b>Palm Ponta Verde</b> las 13–14 noches, sin paquete de cena, con todos los paseos como day trips. El resto de la lista queda como referencia (alternativas, day-use de resort, o para un próximo viaje).</div></div>
   <div class="grid">${HOTELS.map(h=>{const id='h'+h.nm;return `
     <div class="card">
       <div class="ph"><img data-img="${h.img}" alt="${h.nm}">${favBtn(id)}<span class="badge-price">${h.price}/noche</span></div>
@@ -1085,6 +1075,7 @@ function renderFood(){
   <div class="card" style="margin-bottom:16px"><div class="ph" style="height:200px"><img data-img="food" alt="Gastronomía alagoana"></div>
   <div class="bd"><h4>Lo que SÍ o SÍ tienen que probar</h4>
   <p class="kv">🦐 <b>Camarão no abacaxi</b> (camarones cremosos servidos en una piña) · 🐟 <b>Peixada alagoana</b> · 🥥 <b>Sururu</b> (mejillón local, patrimonio de Maceió) · 🫓 <b>Tapioca</b> dulce o salada · 🍧 <b>Açaí</b> en la playa · 🍦 helado de tapioca de la Bali · 🥃 cachaças artesanales.</p></div></div>
+  <div class="warn"><span class="ic">🌙</span><div><b>¿Cena incluida en el Palm (+US$500)? Decidimos que NO.</b> Sale US$18–19 por persona por noche; cenando en la calle van a promediar US$12–18 con mucha más variedad — y tras los almuerzos grandes de playa de los day trips, varias noches solo va a apetecer algo liviano. Plan: cenar afuera y, si un día quieren buffet, agregarlo por noche suelta en recepción (~R$100–130 pp).</div></div>
   <h3 class="s">🍽️ Restaurantes recomendados</h3>
   <div class="filterbar">
     ${[['all','Todos'],[1,'$ Económicos'],[2,'$$ Medios'],[3,'$$$ Premium']].map(([k,l])=>`<button class="${foodF==k?'on':''}" onclick="foodF='${k}';renderFood();bindImgs()">${l}</button>`).join('')}
@@ -1167,7 +1158,7 @@ function renderBudget(){
     ${BUDGET_DEF.map(b=>{
       const a=PRESETS.original[b.k], m=PRESETS.medio[b.k], j=PRESETS.ahorro[b.k];
       const d=(v)=>{const df=a-v; return df>0?` <span style="color:var(--ok);font-weight:700;font-size:12px">−${fmt(df)}</span>`:''};
-      const how={vuelos:'Comprar ya + alertas + fechas flexibles',hotel1:'Frente al mar → a 1 cuadra del mar',hotel2:'Pousada boutique → pousada simple',hotel3:'Resort AI → menos noches o day-use',comida:'Más self-service al peso, cenas top solo algunas noches',traslados:'Transfer privado → van compartida',uber:'Caminar más, agrupar salidas',excursiones:'Contratar en destino y negociar packs',visa:'Fijo: no se puede recortar',seguro:'Comparar aseguradoras (nunca eliminarlo)',esim:'Plan de datos más chico',compras:'Es 100% opcional',propinas:'Acompaña el nivel de gasto',extra:'Baja al bajar el total'}[b.k]||'';
+      const how={vuelos:'Comprar ya + alertas + comparar vuelta 13 vs 14',hotel1:'Ya reservado: fijo en los tres planes',comida:'Más self-service al peso, cenas top solo algunas noches',traslados:'Uber al aeropuerto en vez de transfer',uber:'Caminar más, agrupar salidas',excursiones:'Contratar en destino, negociar packs, Gunga/Francês por libre',visa:'Fijo: no se puede recortar',seguro:'Comparar aseguradoras (nunca eliminarlo)',esim:'Plan de datos más chico',compras:'Es 100% opcional',propinas:'Acompaña el nivel de gasto',extra:'Baja al bajar el total'}[b.k]||'';
       return `<tr><td>${b.l}</td><td><b>US$ ${fmt(a)}</b></td><td>US$ ${fmt(m)}${d(m)}</td><td>US$ ${fmt(j)}${d(j)}</td><td style="font-size:12.5px">${how}</td></tr>`}).join('')}
     ${(()=>{const ta=Object.values(PRESETS.original).reduce((x,y)=>x+y,0),tm=Object.values(PRESETS.medio).reduce((x,y)=>x+y,0),tj=Object.values(PRESETS.ahorro).reduce((x,y)=>x+y,0);
       return `<tr style="font-weight:800;background:#e8f7ef"><td>TOTAL pareja</td><td>US$ ${fmt(ta)}</td><td>US$ ${fmt(tm)}<br><span style="color:var(--ok)">−US$ ${fmt(ta-tm)} (−${Math.round((ta-tm)/ta*100)}%)</span></td><td>US$ ${fmt(tj)}<br><span style="color:var(--ok)">−US$ ${fmt(ta-tj)} (−${Math.round((ta-tj)/ta*100)}%)</span></td><td>Mismas playas, mismas excursiones clave 🏝️</td></tr>`})()}
@@ -1206,7 +1197,7 @@ function renderBudget(){
     </div>
     ${S.exp.length?`<table style="min-width:100%;margin-top:12px">${S.exp.map((e,i)=>`<tr><td>${esc(e.d)}</td><td style="text-align:right">${esc(e.orig)}</td><td style="text-align:right"><b>US$ ${fmt(+e.usd||0)}</b></td><td><button class="del" onclick="S.exp.splice(${i},1);save();renderBudget()">✕</button></td></tr>`).join('')}</table>`:'<p class="kv" style="margin-top:10px;color:var(--mut)">Todavía sin gastos registrados. Durante el viaje anotá acá cada gasto y mirá cómo va el "restante".</p>'}
   </div></div>
-  <h3 class="s">✂️ Dónde ahorrar (los 8 recortes que más rinden)</h3>
+  <h3 class="s">✂️ Dónde ahorrar (los recortes que más rinden)</h3>
   <div class="grid2">${SAVE_TIPS.map(([t,d])=>`<div class="card"><div class="bd"><h4 style="font-size:15px">${t}</h4><p class="kv">${d}</p></div></div>`).join('')}</div>
   <div class="warn"><span class="ic">💡</span><div><b>La cuenta rápida:</b> plan ahorro ≈ <b>US$3.610</b> la pareja (US$1.805 pp · US$226/día) vs. US$5.770 del plan original: <b>−37%</b> sin perder ni una playa ni una excursión clave. Lo único intocable: la visa (US$160) y el seguro (no viajes sin él).</div></div>
   ${noteBlock('presupuesto','Límites, acuerdos de pareja sobre gastos 😄…')}`;
@@ -1243,7 +1234,7 @@ function renderPack(){
   $('tab-equipaje').innerHTML=`
   <h2 class="t">Checklist de equipaje</h2>
   <p class="sub">Tocá cada ítem al empacar. El progreso queda guardado.</p>
-  <div style="display:flex;justify-content:space-between;align-items:center"><h3 class="s" style="margin-top:0">🎒 Para dos, para 16 días de playa</h3><span class="pnum" id="pack-pct"></span></div>
+  <div style="display:flex;justify-content:space-between;align-items:center"><h3 class="s" style="margin-top:0">🎒 Para dos, para 14 días de playa</h3><span class="pnum" id="pack-pct"></span></div>
   <div class="pbar"><i id="pack-bar"></i></div>
   <div class="clist">${PACK.map((c,i)=>`<div class="citem ${S.chk['p'+i]?'on':''}" onclick="tgChk('p${i}',this,'pack')"><span class="box">${S.chk['p'+i]?'✓':''}</span><span class="lbl">${c}</span></div>`).join('')}</div>
   <div class="warn"><span class="ic">🧴</span><div><b>Tips de valija:</b> en las piscinas naturales exigen protector <b>reef-safe</b> (llevalo de acá, allá es caro) · el enchufe brasileño tipo N acepta las fichas uruguayas, pero verificá el voltaje: en Maceió es 220 V como Uruguay ✅ (aprox., algunos hoteles tienen 127 V en el baño) · dejá 30% de la valija vacía para las compras.</div></div>
